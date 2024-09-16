@@ -1,0 +1,27 @@
+{
+  "name": "@m4rc3l05/http-to-dns",
+  "version": "0.0.0",
+  "exports": "./deno.json",
+  "tasks": {
+    "server": "deno run -A --unstable-net src/main.ts",
+    "deps:lock": "deno cache --frozen=false **/*.ts",
+    "deps": "deno cache --reload --frozen **/*.ts"
+  },
+  "lint": {
+    "rules": {
+      "include": ["verbatim-module-syntax"]
+    }
+  },
+  "fmt": {
+    "exclude": ["node_modules"]
+  },
+  "lock": {
+    "frozen": true
+  },
+  "imports": {
+    "@m4rc3l05/process-lifecycle": "jsr:@m4rc3l05/process-lifecycle@0.1.0",
+    "@std/encoding": "jsr:@std/encoding@1.0.5",
+    "@std/log": "jsr:@std/log@0.224.7",
+    "@std/streams": "jsr:@std/streams@1.0.5"
+  }
+}
