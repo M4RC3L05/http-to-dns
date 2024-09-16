@@ -1,3 +1,3 @@
 # HTTPS-TO-DNS
 
-HTTP to udp dns proxy, to be used behind a reverce proxy for DNS over HTTPS
+HTTP to UDP DNS proxy, to be used behind a reverse proxy for DNS over HTTPS
