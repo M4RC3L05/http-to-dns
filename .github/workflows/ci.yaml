@@ -1,0 +1,28 @@
+---
+name: CI
+
+on:
+  - push
+  - pull_request
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone repository
+        uses: actions/checkout@v4
+
+      - name: Install mise
+        uses: jdx/mise-action@v2
+        with:
+          install: true
+          cache: true
+
+      - name: install deps
+        run: deno task deps
+
+      - name: check format
+        run: mise run check:format
+
+      - name: check linting
+        run: mise run check:lint
