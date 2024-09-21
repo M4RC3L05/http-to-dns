@@ -12,9 +12,6 @@
       "include": ["verbatim-module-syntax"]
     }
   },
-  "fmt": {
-    "exclude": ["node_modules"]
-  },
   "lock": {
     "frozen": true
   },
