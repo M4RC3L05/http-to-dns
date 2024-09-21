@@ -19,7 +19,7 @@
     "frozen": true
   },
   "imports": {
-    "@m4rc3l05/process-lifecycle": "jsr:@m4rc3l05/process-lifecycle@0.1.0",
+    "@m4rc3l05/process-lifecycle": "jsr:@m4rc3l05/process-lifecycle@0.1.1",
     "@std/encoding": "jsr:@std/encoding@1.0.5",
     "@std/log": "jsr:@std/log@0.224.7",
     "@std/streams": "jsr:@std/streams@1.0.5"
