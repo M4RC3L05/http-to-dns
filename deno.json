@@ -4,6 +4,7 @@
   "exports": "./deno.json",
   "tasks": {
     "server": "deno run -A --unstable-net src/main.ts",
+    "pretty-logs": "deno run --no-lock jsr:@m4rc3l05/pretty-logs@0.2.2/bin/deno",
     "deps:lock": "deno cache --frozen=false **/*.ts",
     "deps": "deno cache --reload --frozen **/*.ts"
   },
