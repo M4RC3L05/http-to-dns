@@ -7,7 +7,8 @@ USER deno
 
 WORKDIR /app
 
+COPY --chown=deno:deno deno.json deno.lock .
+RUN deno install
+
 COPY --chown=deno:deno . .
 RUN mkdir /app/data
-
-RUN deno install
