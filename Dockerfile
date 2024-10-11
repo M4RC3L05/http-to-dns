@@ -1,4 +1,4 @@
-FROM docker.io/denoland/deno:alpine-1.46.3
+FROM docker.io/denoland/deno:alpine-2.0.0
 
 RUN mkdir /app
 RUN chown -R deno:deno /app
@@ -10,4 +10,4 @@ WORKDIR /app
 COPY --chown=deno:deno . .
 RUN mkdir /app/data
 
-RUN deno task deps
+RUN deno install
