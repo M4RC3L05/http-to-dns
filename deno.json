@@ -11,7 +11,9 @@
       "include": ["verbatim-module-syntax"]
     }
   },
-  "lock": true,
+  "lock": {
+    "frozen": true
+  },
   "imports": {
     "@m4rc3l05/process-lifecycle": "jsr:@m4rc3l05/process-lifecycle@0.1.1",
     "@std/encoding": "jsr:@std/encoding@1.0.5",
