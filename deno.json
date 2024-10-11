@@ -3,7 +3,7 @@
   "version": "0.1.2",
   "exports": "./deno.json",
   "tasks": {
-    "server": "deno run -A --unstable-net src/main.ts",
+    "server": "deno run -A --unstable-net --cached-only src/main.ts",
     "pretty-logs": "deno run --no-lock jsr:@m4rc3l05/pretty-logs@0.2.2/bin/deno"
   },
   "lint": {
