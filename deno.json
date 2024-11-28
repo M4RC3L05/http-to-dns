@@ -1,6 +1,6 @@
 {
   "name": "@m4rc3l05/http-to-dns",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "exports": "./deno.json",
   "tasks": {
     "server": "deno run -A --cached-only --unstable-net src/main.ts",
