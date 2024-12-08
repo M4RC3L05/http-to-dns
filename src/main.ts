@@ -34,3 +34,7 @@ pl.registerService({
 });
 
 await pl.boot();
+
+if (Deno.env.get("BUILD_DRY_RUN") === "true") {
+  await pl.shutdown();
+}

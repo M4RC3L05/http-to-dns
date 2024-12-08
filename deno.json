@@ -3,8 +3,14 @@
   "version": "0.1.10",
   "exports": "./deno.json",
   "tasks": {
-    "server": "deno run -A --cached-only --unstable-net src/main.ts",
-    "pretty-logs": "deno run --no-lock jsr:@m4rc3l05/pretty-logs@0.2.2/bin/deno"
+    "server": {
+      "description": "Run server app",
+      "command": "deno run -A --cached-only --unstable-net src/main.ts"
+    },
+    "cmd:pino-pretty": {
+      "description": "Interact with pino-pretty",
+      "command": "deno run -A --no-lock npm:pino-pretty@13.0.0 -m message --levelKey level --timestampKey datetime -k \"data.error,data.err\" -c -C"
+    }
   },
   "lint": {
     "rules": {

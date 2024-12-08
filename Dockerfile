@@ -7,8 +7,10 @@ USER deno
 
 WORKDIR /app
 
-COPY --chown=deno:deno deno.json deno.lock .
-RUN deno install
-
 COPY --chown=deno:deno . .
+
+RUN deno install --entrypoint src/main.ts
+
+RUN BUILD_DRY_RUN=true DATABASE_PATH=":memory:" timeout 2s deno task server || true
+
 RUN mkdir /app/data
