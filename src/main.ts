@@ -12,25 +12,15 @@ gracefulShutdown({ processLifecycle: pl, log });
 
 pl.registerService({
   name: "server",
-  boot: () => {
-    const abortController = new AbortController();
-
-    return {
-      server: Deno.serve({
-        port: config.server.port,
-        hostname: config.server.hostname,
-        onListen: ({ hostname, port }) => {
-          log.info(`Serving on http://${hostname}:${port}`);
-        },
-      }, handler({ abortSignal: abortController.signal })),
-      abortController,
-    };
-  },
-  shutdown: ({ server, abortController }) => {
-    abortController.abort();
-
-    return server.shutdown();
-  },
+  boot: () =>
+    Deno.serve({
+      port: config.server.port,
+      hostname: config.server.hostname,
+      onListen: ({ hostname, port }) => {
+        log.info(`Serving on http://${hostname}:${port}`);
+      },
+    }, handler({ abortSignal: pl.signal })),
+  shutdown: (server) => server.shutdown(),
 });
 
 await pl.boot();
